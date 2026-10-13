@@ -1,0 +1,14 @@
+# Temporary and cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.tmp
+~$*.docx
+
+# Environment
+.venv/
+env/
+venv/
+
+# Large files exceeding GitHub standard threshold (if needed)
+# fake_reviews_dataset.csv (15MB - within GitHub 100MB file limit)

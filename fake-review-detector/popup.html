@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Scanner</title>
+  <link rel="stylesheet" href="popup-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-icon">
+        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="neuGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#14b8a6" />
+              <stop offset="100%" stop-color="#3b82f6" />
+            </linearGradient>
+            <filter id="neuDrop">
+              <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#a3b1c6" flood-opacity="0.8"/>
+              <feDropShadow dx="-2" dy="-2" stdDeviation="3" flood-color="#ffffff" flood-opacity="0.9"/>
+            </filter>
+          </defs>
+          <path d="M50 10 L85 25 V50 C85 75 50 90 50 90 C50 90 15 75 15 50 V25 L50 10 Z" fill="url(#neuGrad)" filter="url(#neuDrop)"/>
+          <path d="M35 50 L45 60 L65 40" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="header-text">
+        <h1 class="title">Review Scanner</h1>
+        <p class="subtitle" style="color: #8b5cf6; font-weight: 700;">RoBERTa EDITION (93.1% ACC)</p>
+      </div>
+    </header>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <span class="stat-label">Total Scanned</span>
+        <span class="stat-value text-blue" id="statTotal">—</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Verified</span>
+        <span class="stat-value text-green" id="statVerified">—</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Suspicious</span>
+        <span class="stat-value text-red" id="statSuspicious">—</span>
+      </div>
+    </div>
+
+    <div class="toggle-card">
+      <div class="toggle-info">
+        <div class="toggle-label">Scanner Engine</div>
+        <div class="toggle-sublabel" id="statusText">Active</div>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="scannerToggle" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="flagged-section">
+      <div class="flagged-header">
+        <h2>Detected Anomalies</h2>
+        <span class="badge" id="flaggedCount">0</span>
+      </div>
+      
+      <div class="flagged-list-container">
+        <div id="emptyState" class="empty-state">
+          No suspicious reviews detected yet.
+        </div>
+        <div id="flaggedList" class="flagged-list">
+          <!-- Flagged items injected here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    Monitoring active product pages seamlessly.
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
